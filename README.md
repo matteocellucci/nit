@@ -1,56 +1,54 @@
 # NIT
 
-[![License](https://www.gnu.org/graphics/gplv3-88x31.png)](link-to-license)
+[![License GPLV3](https://www.gnu.org/graphics/gplv3-88x31.png "License GPLv3")
+](https://github.com/matteocellucci/nit/blob/master/LICENSE)
 
 Nit is a backlight manager for screen and keyboard.
 
 ## Understanding
-Nit uses a controller for each device in order to manage brightness.
+Nit uses a different controller for each device that can handle the brightness.
 
-### Screen
 The screen controller is loaded from `/sys/class/backlight` and it is by
 default `nv_backlight`. This value can be overwritten setting the environment
 variable `$NIT_CTRL_SCREEN`.
 
-### Keyboard
 The keyboard controller is loaded from `/sys/class/leds` and it is by default
 `smc::kbd_backlight`. This value can be overwritten setting the environment
 variable `$NIT_CTRL_KEYBOARD`.
 
 ## Installing
-1. First step consists in downloading, compiling and installing the source:
+The first step consists in downloading, compiling and installing the source:
 ``` shell session
-$ git clone https://github.com/matteocellucci/<proj>
+$ git clone https://github.com/matteocellucci/nit.git
 $ cd nit
 $ make clean && make && sudo make install
 ```
-2. In the second step you may need to set the enviroment variables accordingly
+In the second step you may need to set the enviroment variables accordingly
 with your controllers name. You can find them listing files in their loadings
 folder:
 ``` shell session
 $ export $NIT_CTRL_SCREEN="<screen_ctrl_name>"
 $ export $NIT_CTRL_KEYBOARD="<keyboard_ctrl_name>"
 ```
-_*Warning*_: besides a single instance execution, in order to make this settings
-persistent after reboot, you should add these commands in a file such
+**Warning**: besides current session, in order to make these settings
+persistent after reboot, you should add those commands in a file such
 `rc.local`.
 
-3. The command is ready but it can be run only with `sudo` permissions. To
-allow a user to use it, a further step is needed. Execute:
+The installation is complete, but Nit can run only with `sudo` permission due
+to the mode set of the controller. To allow for the logged user to use it a
+further step is needed. Execute:
 ``` shell session
 $ sudo nit --setup
 ```
-_*Warning"_: to make changes available you must achieve a reboot or at least a 
+**Warning**: to make changes available you must fullfill a reboot or at least a 
 login/logout.
 
 ## Uninstalling
-I really like feedbacks of any kind. Feel free to open issues or to contact me
-in any way. Simply:
+Simply:
 ``` shell session
 $ cd nit
 $ make unistall
 ```
-I hope I'll see you again in the future!
 
 ## Usage
 ```
@@ -91,7 +89,6 @@ $ nit --screen -s -4
 ```
 
 ## Contribution
-Contributions to Nit are greatly appreciated, whether a feature request or a
-bug report. You can make magic even by yourself, forking Nit. I'd enjoy if you
-will request a pull!
- 
+Contributions to Nit are greatly appreciated, whether it's a feature request or
+a bug report. You can make magic trick even by yourself. I'll enjoy if you
+request a pull!
