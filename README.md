@@ -50,7 +50,7 @@ $ cd nit
 $ make unistall
 ```
 
-## Usage
+## Usage excerpt
 ```
 nit [DEVICE] [OPTION]
 

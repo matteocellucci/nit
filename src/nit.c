@@ -639,7 +639,7 @@ Option:\n\
                          PERMISSIONS for more details\n\
   -s [VAL], --set=[VAL]  adjust brightness according to VAL; VAL is an\n\
                          integer and can be formatted in three ways, each of\n\
-                         them is meaningfull:
+                         them is meaningfull:\n\
                             VAL   set VAL as current brightness\n\
                            +VAL   add VAL to current brightness\n\
                            -VAL   sub VAL from current brightness\n\
@@ -652,9 +652,9 @@ Controller:\n\
 By deafult controllers are 'nv_backlight' for the screen and\n\
 'smc::kbd_backlight' for the keyboard. Other controllers can be used setting\n\
 $NIT_CTRL_SCREEN and $NIT_CTRL_KEYBOARD. Default paths of the controllers\n\
-are '/sys/class/backlight' and '/sys/class/leds'. Without '-s' option, current\n\
-device's brightness is returned. In case are specified more controllers only\n\
-the last will be considered.\n\n\
+are '/sys/class/backlight' and '/sys/class/leds'. Without '-s' option,\n\
+current device's brightness is returned. In case are specified more\n\
+controllers only the last will be considered.\n\n\
 Permissions:\n\
 In order to execute this command without root permission, you may need to add\n\
 rules in '/etc/udev/rules.d'. Once you configured the controllers, you can\n\
